@@ -70,6 +70,19 @@ namespace Game1
                 Exit();
 
             // TODO: Add your update logic here
+            var kstate = Keyboard.GetState();
+
+            if (kstate.IsKeyDown(Keys.Up))
+                ballPosition.Y -= ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (kstate.IsKeyDown(Keys.Down))
+                ballPosition.Y += ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (kstate.IsKeyDown(Keys.Left))
+                ballPosition.X -= ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (kstate.IsKeyDown(Keys.Right))
+                ballPosition.X += ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             base.Update(gameTime);
         }
